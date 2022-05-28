@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 200px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            
+        }
+
+        #movie{
+            height: 200px;
+            width: 206px;
+            border: 1px solid black;
+            border-top: none;
+            overflow: scroll;
+            background-color: #030b17;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+             
+        }
+
+        #cont{
+            height: 400px;
+            width: 200px;
+            border: 1px solid black;
+            margin-top: 50px;
+             text-align: center;
+             border-radius: 10px;
+             overflow: scroll;
+             background-color: #030b17;
+             margin: auto;
+             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        img{
+            height: 200px;
+            width: 100%;
+            border-radius: 5px;
+        }
+        h2{
+            color: white;
+        }
+        p{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <input oninput="debounceFunction(main,1000)"  type="text" id="query" placeholder="Search movies">
+
+    <div id="movie"></div>
+
+    <div id="cont">
+         </div>
+</body>
+</html>
+<script>
+    let id;
+    let box=document.getElementById("cont")
+    let movie_div=document.getElementById("movie")
+    async function searchmovie(query){
+        let url=`http://www.omdbapi.com/?s=${query}&apikey=3f15a8a`;
+
+          try{
+                let res=await fetch(url);
+
+                 let data=await res.json();
+
+                  return data.Search;
+          }
+
+          catch(error){
+            console.log("error",error)
+          }
+    }
+
+    function appendmovie(movie){
+       movie_div.innerHTML=null;
+       box.innerHTML=null;
+        if(movie===undefined){
+            return false;
+        }
+            movie.forEach(function(el){
+            let p=document.createElement("p")
+            p.innerText=el.Title;
+            
+            let img=document.createElement("img")
+            img.setAttribute("src",img)
+            img.src=el.Poster
+
+            let year=document.createElement("h2")
+         year.innerText=`Year:${el.Year}`
+
+          
+
+         
+
+     box.append(img,year)
+        
+          
+             
+
+            movie_div.append(p)
+
+        });
+    }
+
+    async function main(){
+
+        let query=document.getElementById("query").value;
+         
+          console.log("query",query)
+        let response=searchmovie(query)
+        let data= await response;
+         appendmovie(data);
+        console.log(data)
+    }
+
+  function debounceFunction(func,delay) {
+     if(id){
+         clearTimeout(id)
+     }
+    id=setTimeout(function(){
+       func();
+    },delay)
+  }
+</script>

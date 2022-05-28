@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cont{
+            
+             height: 900px;
+             width: 100%;
+             width: 50%;
+             display: flex;
+             
+              
+             
+        }
+        #cont>div{
+            gap: 100px;
+            height: 100%;
+            width: 80%;
+        }
+
+        img{
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+        <input type="text" id="city" >
+        <button onclick="getdata()">Search Weather</button>
+    </div>
+    
+</body>
+</html>
+<script>
+
+    // var x=fetch();
+    // console.log(x)
+     
+    //  const url="https://reqres.in/api/users?page=2"
+    // const url="https://www.omdbapi.com/?s=Type&y=2017&plot=full&apikey=3f15a8a"
+    
+    // fetch(url)
+    // .then(function (res){
+    //     return res.json();
+    // })
+    // .then(function(res){
+    //     console.log(res);
+    // })
+    // .catch(function(err){
+    //     console.log("error",err)
+    // });
+    //  const url= "http://www.omdbapi.com/?s=movie&y=2020&apikey=3f15a8a";
+
+
+
+    // async function getdata(){
+    //   try{
+    //     let res= await fetch(url);
+
+    //      let user= await res.json();
+    //     //  append(user)
+    //        console.log(user)
+    //   }
+    //   catch(err){
+    //        console.log(err)
+    //   }
+         
+    // }
+
+    // getdata();
+
+     
+
+    // function append(data){
+        // data.forEach(function(el){
+        //     let cont=document.getElementById("cont")
+
+        //  let img=document.createElement("img")  
+        //  img.src=el.Poster
+
+        //  let h2=document.createElement("h2") 
+        //     h2.innertext=el.Title;
+
+        //  let p=document.createElement("p") 
+        //  p.innerText=Type;
+
+
+        //  let div=document.createElement("div")
+
+        //  div.append(img,h2,p)
+        //  cont.append(div);
+
+        // });
+    // };
+//      const url="http://www.omdbapi.com/?i=tt3896198&apikey=3f15a8a"
+    // const url= "https://fakestoreapi.com/products"
+         
+    async function getdata(dhol){
+        let url=`http://www.omdbapi.com/?t=${dhol}&apikey=3f15a8a`;
+      try{
+        let res= await fetch(url);
+
+          let products= await res.json();    //collect data
+          
+        //  append(products)
+           console.log(products)
+      }
+      catch(err){
+           console.log(err)
+      }
+         
+    }
+    getdata();
+
+    // function append(data){
+    //     data.forEach(function(el){
+    //         let cont=document.getElementById("cont")
+
+    //      let img=document.createElement("img")  
+    //      img.src=el.image;
+
+    //      let h2=document.createElement("h2") 
+    //         h2.innertext=el.category;
+
+    //      let p=document.createElement("p") 
+    //      p.innerText=el.price;
+
+    //      let desc=document.createElement("h2") 
+    //      desc.innerText=el.description;
+
+    //      let rate=document.createElement("h3") 
+    //         rate.innerText=el.rating.count;
+
+
+    //      let div=document.createElement("div")
+
+    //      div.append(img,h2,p,desc,rate)
+    //      cont.append(div);
+
+    //     })
+    // }
+</script>

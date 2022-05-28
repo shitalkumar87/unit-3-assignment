@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   #sun{
+        
+       height: 100px;
+       width: 100px;
+       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     }  
+     #suns{
+       
+       height: 100px;
+       width: 100px;
+       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     } 
+     img{
+         height: 100px;
+         width: 100%;
+         clip-path: circle(50px);
+     }
+
+     img+img1{
+         height: 100px;
+         width: 100%;
+         clip-path: circle(50px);
+     }
+
+      
+
+     #map{
+         margin: auto;
+         text-align: center;
+     }
+
+     #container{
+         height: 350px;
+        
+         width: 250px;
+          
+         margin-top: 50px;
+         margin-left: 900px;
+         text-align: center;
+         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     }    
+     h2{
+         color: teal;
+     }
+    .mapouter{
+        text-align: center;
+        margin-right: 200px;
+        margin-top: -350px;
+    }
+
+    input[type="text"]{
+        padding: 12px;
+        border :1px solid #ccc;
+        box-sizing: border-box;
+        border-radius: 5px;
+         
+    }
+
+    button{
+        padding: 12px;
+         border: none;
+         border-radius: 10px;
+         font-size: 20px;
+         cursor: pointer;
+         background-color: teal;
+    }
+      
+    </style>
+</head>
+<body>
+
+    <div id="sun">
+        
+         </div>
+
+         <div id="suns">
+        
+        </div>
+    <div id="map">
+        <input type="text" id="city" >
+        <button onclick="getdata()">Search Weather</button>
+    </div>
+     
+    <div id="container"></div>
+
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="600"
+             height="500" 
+             id="gmap_canvas" 
+             src="https://maps.google.com/maps?q=jainagar&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+             frameborder="0"
+             scrolling="no"
+              marginheight="0"
+               marginwidth="0"></iframe>
+            </div>
+        </div>
+</body>
+</html>
+ <script src="./index.js"></script>
