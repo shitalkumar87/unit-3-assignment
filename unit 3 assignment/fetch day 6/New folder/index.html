@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+  
     <div id="cont"></div>
 </body>
 </html>
@@ -18,8 +19,8 @@
         let res= await fetch(url);
 
           let products= await res.json();    //collect data
-        //  append(products)
-           console.log(products)
+          append(products)
+            
       }
       catch(err){
            console.log(err)
@@ -53,6 +54,6 @@
          div.append(img,h2,p,desc,rate)
          cont.append(div);
 
-        })
+        });
     }
 </script>

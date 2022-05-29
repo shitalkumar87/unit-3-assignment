@@ -29,10 +29,10 @@
     </style>
 </head>
 <body>
-    <div id="map">
+    <!-- <div id="map">
         <input type="text" id="city" >
         <button onclick="getdata()">Search Weather</button>
-    </div>
+    </div> -->
     
 </body>
 </html>
@@ -100,8 +100,9 @@
 //      const url="http://www.omdbapi.com/?i=tt3896198&apikey=3f15a8a"
     // const url= "https://fakestoreapi.com/products"
          
-    async function getdata(dhol){
-        let url=`http://www.omdbapi.com/?t=${dhol}&apikey=3f15a8a`;
+    async function getdata(){
+        // let url=`http://www.omdbapi.com/?t=${dhol}&apikey=3f15a8a`;
+        const url= "https://fakestoreapi.com/products"
       try{
         let res= await fetch(url);
 
