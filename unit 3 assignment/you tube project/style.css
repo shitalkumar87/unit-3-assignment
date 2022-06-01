@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
-/* *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} */
+} 
 
-/* body{
+body{
     font-family: 'Roboto',sans-serif;
 }
 .material-icons{
@@ -19,16 +19,17 @@
     align-items: center;
     height: 70px;
     padding:  20px;
-     
+     /* border: 1px solid black; */
     gap: 200px;
+    background-color: rgb(27, 21, 21);
 }
 
 .headerleft{
     display: flex;
     align-items: center;
-   
-} */
-/* 
+    /* border: 1px solid black; */
+} 
+
 .headerleft img{
     width: 120px;
     margin-left: 15px;
@@ -37,6 +38,7 @@
 .headerleft i{
     cursor: pointer;
     padding: 0px 10px;
+    /* border: 1px solid black; */
 }
 
 .headersearch form{
@@ -44,28 +46,48 @@
     margin: 0;
     padding: 0;
     height: 35px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border: 1px solid  #ddd;
      
 
 }
 
-.headersearch form input{
+.headersearch input{
     width: 550px;
     padding: 10px;
     margin: 0;
     border-radius: 0;
     border: none;
+    /* border: 1px solid black; */
 }
 button{
-    padding: 0;
+    padding: 5px  5px 5px 5px;
     border: none;
-    margin: 0;
-    height: 100%; 
+    margin: 0px;
+    height: 80%; 
     border-radius: 0;
+    /* border: 1px solid black; */
 
 }
 
+#results{
+    display: grid;
+    grid-template-columns: repeat(4,20%);
+    grid-gap: 5%;
+    margin-top: 30px;
+}
+
+#frame{
+    height: 500px;
+    width: 70%;
+    /* border: 1px solid red; */
+    margin: auto;
+}
+ 
+h1{
+    text-align: center;
+    font-weight: 700;
+}
 /* mainbody */
 /* .mainbody{
     height: calc(100vh - 70px);
