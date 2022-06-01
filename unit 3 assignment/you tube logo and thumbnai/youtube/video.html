@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            height: 500px;
+            width: 70%;
+            /* border: 1px solid red; */
+            margin: auto;
+        }
+        iframe{
+            height: 500px;
+            width: 100%;
+        }
+        h1{
+            text-align: center;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <h1 >Video Shown On Large Screen</h1>
+
+    <div id="frame">
+        
+
+    </div>
+
+</body>
+</html>
+
+  <script>
+        
+        let video=JSON.parse(localStorage.getItem("video"))
+
+                displaydata(video)
+
+                function displaydata(data){
+                  let frame=document.getElementById("frame")
+                  let iframe=document.createElement("iframe") 
+                  iframe.src =`https://www.youtube.com/embed/${data.videoId}`;
+
+
+                    frame.append(iframe)
+                }
+
+                 
+  </script>

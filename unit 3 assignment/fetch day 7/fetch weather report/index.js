@@ -5,10 +5,10 @@ const Api_key="6a2d644f3e87a166a3e853f79b757b48";
     let city=document.getElementById("city").value;
     let url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Api_key}`;
 
-   var res=await fetch(url);
-
-   var  data=await res.json();
-   append(data)
+   let res=await fetch(url);
+   
+   let  data=await res.json();
+    append(data)
    console.log(data);
 
 }

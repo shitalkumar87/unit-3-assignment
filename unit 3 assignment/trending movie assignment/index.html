@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     #show{
+         height: 160px;
+         width: 350px;
+         color: rgb(0, 186, 242);
+         margin: auto;
+         border-top: none;
+         /* border: 1px solid white; */
+         font-size: 30px;
+     }
+
+       .cont{
+           height: 800px;
+           width: 100%;
+            
+           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+           /* border: 1px solid white; */
+            text-align: center;
+            
+             
+            position: relative;
+       }
+       #box{
+           height: 120px;
+           width: 30%;
+           /* border: 1px solid white; */
+           margin: auto;
+           background-color: #110b0b;
+            
+       }
+        input[type="text"]{
+             position: absolute;
+            width: 200px;
+              
+            /* border: 1px solid white; */
+            padding: 25px 100px  25px 100px;
+            border-radius: 10px;
+            top: 30%;
+            font-size: 25px;
+            font: 700;
+            
+        }
+        .cont{
+             background: url(https://24.media.tumblr.com/9ab085c86641f1a5505e114e26d992d7/tumblr_mhewavQt9R1rkz3l1o1_500.gif);
+             background-position: center;
+              justify-content: center;
+              align-items: center;
+              display: flex;
+        }
+        img{
+            height: 400px;
+            width: 100%;
+
+        }
+          
+  
+ 
+    </style>
+</head>
+<body>
+    <div class="cont">
+         
+          
+        <input oninput="debounceFunction(main,1000)"   type="text" id="query" placeholder="Starwar Character">
+         <div id="show"></div>
+    </div>
+     
+
+    <div id="movie"></div>
+
+    
+          
+</body>
+</html>
+<script src="./index.js">
+       
+  
+     
+</script>
+© 2022 GitHub, Inc.
+Terms

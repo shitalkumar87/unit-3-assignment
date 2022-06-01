@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* body{
+    font-family: 'Roboto',sans-serif;
+}
+.material-icons{
+    color: rgb(96, 96, 96);
+}
+
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70px;
+    padding:  20px;
+     
+    gap: 200px;
+}
+
+.headerleft{
+    display: flex;
+    align-items: center;
+   
+} */
+/* 
+.headerleft img{
+    width: 120px;
+    margin-left: 15px;
+}
+
+.headerleft i{
+    cursor: pointer;
+    padding: 0px 10px;
+}
+
+.headersearch form{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 35px;
+    border: 1px solid black;
+    border: 1px solid  #ddd;
+     
+
+}
+
+.headersearch form input{
+    width: 550px;
+    padding: 10px;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+}
+button{
+    padding: 0;
+    border: none;
+    margin: 0;
+    height: 100%; 
+    border-radius: 0;
+
+}
+
+/* mainbody */
+/* .mainbody{
+    height: calc(100vh - 70px);
+
+    display: flex;
+    overflow: hidden;
+    border: 1px solid red;
+
+}
+
+/* sidebar */ 
+
+ /* .sidebar{
+    height: 100%;
+    width: 230px;
+    background-color: white;
+    border: 1px solid red;
+     
+     
+} 
+
+.sidebarcategory{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.category{
+     display: flex; 
+    align-items: center;
+     padding: 12px 25px; 
+    margin: 20px;
+}
+
+ .category:hover{
+     background: #e5e5e5;
+     cursor: pointer;
+ }
+
+ .sidebar::-webkit-scrollbar{
+     display: none;
+ }
+ hr{
+     height: 1px;
+     border: none;
+     background-color: #e5e5e5;
+ }
+ .results{
+    display: grid;
+    grid-template-columns: repeat(4,20%);
+    grid-gap: 5%;
+}
+
+.videos{
+    background-color: #f9f9f9;
+    width: 100%;
+    height: 100%;
+    padding: 15px 25px;
+    overflow: scroll;
+    border-top: 1px solid #ddd;
+    border: 1px solid black;
+}
+
+.videocontainer{
+    display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     border: 1px solid black;
+
+}
+
+.video{
+    border: 1px solid black;
+    width: 310px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+
+}
+
+.videothumbnail{
+    width: 100%;
+    height: 170px;
+    border: 1px solid black;
+}
+
+iframe{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+}  */
+  
