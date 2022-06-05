@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //1 vehicle
+//2. parking slots
+
+
+class person{
+    constructor(category,name,gender,age){
+        this._type=category
+        this._name=name
+        this._gender=gender
+        this._age=age
+         
+    }
+
+    get type(){
+        return this._type
+    }
+
+    set type(value){
+        this._type=value
+    }
+
+}
+
+
+class  general extends person{
+
+    constructor(name,gender){
+        super("general",name,gender)
+        
+    }
+}
+ 
+class vip extends person{
+    constructor( name,gender){
+        super("vip",name,gender)
+        
+    }
+}
+
+
+class vvip extends person{
+    constructor( name,gender){
+        super("vvip",name,gender)
+        
+    }
+}
+
+
+
+
+  
+ 
+
+ //  Ticket Spot
+
+ class slot{
+     constructor(type,number){
+        this._type=type
+        this.number=number
+        this._isBooked=false
+     }
+
+     get isBooked(){
+         return this._isBooked
+     }
+
+     set isBooked(value){
+          this._isBooked=value ;
+     }
+ }
+
+
+
+ /////individual floors
+
+ class sittingfloor{
+     constructor(floornumber,maxspot){
+        this._floornumber=floornumber
+        this._sittingspot=[]
+        for(var i=0;i<maxspot;i++)
+        {
+           if(i===0)
+           {
+                this._sittingspot.push(new slot("general",i))
+           }
+
+           else if(i===1)
+           {
+            this._sittingspot.push(new slot("vip",i))
+           }
+
+           else
+           {
+            this._sittingspot.push(new slot("vvip",i))
+           }
+        }
+     }
+
+       get sittingspot(){
+           return this._sittingspot
+       }
+
+     set sittingspot(value){
+            this._sittingspot=value
+       }
+ }
+
+////sittinglot; sitting on which floor/building
+ class sittinglot{
+     constructor(number){
+         this._floors=[]
+         this._numberoffloors=number;
+
+         for(var i=0;i<number;i++)
+         {
+             this._floors.push(new sittingfloor(i,3))
+         }
+     }
+
+     get numberoffloors(){
+        return this.numberoffloors
+     }
+
+     get floors(){
+          return this._floors
+     }
+
+
+      seatingnumber(person){
+         let slot=this.findslot(person.type)
+         console.log(person)
+         if(slot){
+             this.bookslot(slot)
+             console.log(slot)
+             let ticket= new Ticket(slot.floornumber,slot.slot.number,person._name,person._gender,person._age)
+             console.log("Ticket:",ticket)
+         }
+
+         else{
+             console.log("Ticket is not available")
+             return false;
+         }
+      }
+
+
+     findslot(type){
+         for(var i=0;i<this._numberoffloors;i++)
+         {
+             for(let slot of this._floors[i]._sittingspot)
+             {
+                    if(slot._type===type && !slot.isBooked)
+                    {
+                         return{floornumber:i,slot:slot};
+                    }
+             }
+         }
+         return false;
+     }
+
+     bookslot(slot){
+          slot.slot.isBooked=true;
+          console.log("Ticket booked")
+          return true;
+     }
+  }
+
+
+
+
+
+ class Ticket{
+      constructor(floornumber,slotnumber,name,gender,age){
+          this.age=age
+          this.name=name
+          this.gender=gender
+          this.floornumber=floornumber;
+          this.slotnumber=slotnumber;
+          this.issuedAt=new Date();
+      }
+ }
+     
+//      
+
+   let v1= new person("vip","AVISHEK","male",25)
+   let b1=new sittinglot(2)
+   b1.seatingnumber(v1)
+
+   let v2= new person("vip","AVISHEK","male",25)
+    
+   b1.seatingnumber(v2)
+
+ 
+ 
+
+</script>
