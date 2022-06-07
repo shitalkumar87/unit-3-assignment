@@ -27,7 +27,7 @@ let id;
      let response=searchmovie(query)
  let data= await response;
    append(data);
- console.log(data)
+   console.log(data)
   }
 
   function append(Starwar){

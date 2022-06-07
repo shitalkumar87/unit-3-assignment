@@ -1,0 +1,35 @@
+ h1{
+     text-align: center;
+ }
+ *{
+     background-color: aqua;
+ }
+
+#box{
+    text-align: center;
+    margin-top: 50px;
+    
+}
+
+#container{
+       text-align: center;
+        
+     height: 200px;
+     width: 50%;
+      
+     margin: auto;
+      overflow: scroll;
+       
+}
+
+img{
+    height: 400px;
+    width: 500px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+p{
+    font-size: 20px;
+}
+
+ 
