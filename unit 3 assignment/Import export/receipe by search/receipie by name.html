@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipe by name</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+         
+    </style>
+</head>
+<body>
+       <div id="navbar"></div>
+     
+        <div id="bag">
+            <input oninput="debounceFunction(main,1000)" id="receipe" type="text" placeholder="Search Receipe">
+        </div>
+      
+       <div id="container"></div>
+      
+</body>
+</html>
+
+<script  type="module">
+       import {debounceFunction,main,getdata,append} from "./navbar/searchrecp.js"
+    import navbar from "./navbar/navbar.js"
+        document.getElementById("navbar").innerHTML=navbar();
+ 
+        // import {getdata,append} from "./navbar/searchrecp.js";
+
+        document.getElementById("receipe").oninput=main
+        
+        
+     
+
+</script>
+<!-- <script>
+    async function getdata(receipe){
+          let url=`https://www.themealdb.com/api/json/v1/1/search.php?s=${receipe}`
+           
+          
+       
+         let res=await fetch(url);
+
+          let data=await res.json();
+
+           return(data.meals);
+
+      }
+      
+       
+
+
+     async function main(){
+
+          let receipe=document.getElementById("receipe").value;
+
+         console.log( "Receipe",receipe)
+
+         let data=await getdata(receipe)
+            console.log(data)
+              }
+     
+</script>
+
+  
