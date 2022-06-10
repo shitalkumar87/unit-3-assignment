@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": "8",
+      "name": "SUMANT SHARMA",
+      "price": "30000"
+    },
+    {
+      "id": "10",
+      "name": "MY RETAILER",
+      "price": "10000"
+    },
+    {
+      "id": "4",
+      "name": "Rohit Sharma",
+      "price": "1.2cr"
+    }
+  ]
+}
