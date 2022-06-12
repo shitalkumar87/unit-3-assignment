@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         input[type="text"]{
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 4px;
+            resize: vertical;
+            width: 10%;
+            border: 1px solid #ccc;
+            font-size: 20px;
+             
+            background-color: white;
+            
+            
+         }
+         button{
+            cursor: pointer;
+            padding: 15px;
+            color: white;
+            background-color: brown;
+            font-size: 15px;
+            border-radius: 5px;
+         }
+         *{
+            background-color: teal;
+         }
+    </style>
+</head>
+<body>
+     
+
+    <div>
+        <h1>ADD DATA</h1>
+        <input type="text" id="id" placeholder="ID">
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="price" placeholder="Price">
+        <button onclick="addProduct()">Add Product</button>
+    </div>
+    <div>
+        <input type="text" id="delete" placeholder="ID">
+        <button onclick="deleteProduct()">Delete</button>
+    </div>
+    <div>
+    <input type="text" id="idc" placeholder="Putid">
+    <input type="text" id="idname" placeholder="Changename">
+    <input type="text" id="idprice" placeholder="Changeprice">
+     <button onclick="update()">PATCH</button>
+    </div>
+
+    <div>
+        <input type="text" id="idp" placeholder="Putid">
+        <button onclick="put()">PUT</button>
+
+    </div>
+
+    <div>
+        <input type="text" id="get" placeholder="Get Data By Id">
+        <button onclick="get()">Get</button>
+    </div>
+</body>
+</html>
+<script>
+
+       async function addProduct(){
+        const data = {
+            id:document.getElementById('id').value,
+            name:document.getElementById('name').value,
+            price:document.getElementById('price').value
+
+        };
+
+        let response= await fetch('http://localhost:5000/api/products',{
+
+            method:"POST",
+
+       body:JSON.stringify(data),
+
+      headers: { 'Content-Type':'application/json' },
+
+        });
+
+        let dat=await response.json();
+
+        
+
+    }
+
+
+    async function deleteProduct(){
+
+       let id= document.getElementById('delete').value
+
+        let response= await fetch(`http://localhost:5001/api/products/${id}`,{
+           
+      method:"DELETE",
+
+      headers: { 'Content-Type':'application/json' },
+
+        });
+      let data=await response.json();
+       console.log(data)
+    }
+
+
+    
+    async function update(){
+
+let idc= document.getElementById('idc').value
+let idname=document.getElementById('idname').value
+let idprice=document.getElementById('idprice').value
+
+ let response= await fetch(`http://localhost:5001/api/products/${idc}`,{
+    
+method:"PATCH",
+body:JSON.stringify({
+    name:`${idname}`,
+    price:`${idprice}`,
+}),
+ 
+
+headers: { 'Content-Type':'application/json' },
+
+ });
+let data=await response.json();
+}
+  
+  async function put(){
+    let idp=document.getElementById("idp").value
+
+    let response=await fetch(`http://localhost:5001/api/products/${idp}`,{
+
+        method:"PUT",
+
+        body:JSON.stringify({
+          name:"",
+          price:"",
+          
+        }),
+        headers: { 'Content-Type':'application/json' },
+    }) 
+    let data=await response.json();
+
+  }
+  
+      async function get(){
+        let get=document.getElementById("get").value
+
+        let response=await fetch (`http://localhost:5001/api/products/${get}`,{
+
+            method:'GET',
+        
+
+            headers: { 'Content-Type':'application/json' },
+        })
+        let data=await response.json()
+        console.log(data)
+      }
+
+
+</script>

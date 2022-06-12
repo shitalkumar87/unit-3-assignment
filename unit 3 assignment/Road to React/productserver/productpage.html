@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            display: flex;
+            margin: 10px auto;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        #options{
+            display: flex;
+             
+        }
+
+        #container{
+            display: grid;
+            grid-template-columns:repeat(4,20%) ;
+            grid-gap: 5%;
+        }
+
+        img{
+            height: 300px;
+            width: 300px;
+        }
+        *{
+            background-color: aquamarine;
+        }
+
+
+    </style>
+</head>
+<body>
+      <div id="navbar"> <a href="./index.html">Home</a>
+         <div id="options">
+            <h3 > <a href=""> Product Page</a></h3>
+         </div>
+    </div>
+
+      <div id="container"></div>
+</body>
+</html>
+<script>
+
+          async function getdata(){
+
+            let res=await fetch('http://localhost:5000/api/products')
+
+            let data=await res.json()
+
+            append(data)
+
+      }
+
+      getdata()
+
+        function append(data){
+           let cont=document.getElementById('container')
+            data.forEach((el) =>{
+               
+                let div=document.createElement("div")
+
+
+                let img=document.createElement("img")
+                let name=document.createElement("h3")
+                let price=document.createElement("h4")
+                let id=document.createElement("p")
+
+                 img.src=el.img
+                 name.innerText=el.name
+                 price.innerText=`price:${el.price}` 
+                 id.innerText=`id:${el.id}`
+               
+                 div.append(img,name,price,id)
+                 cont.append(div)
+
+            });
+        }
+</script>

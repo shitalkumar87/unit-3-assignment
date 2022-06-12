@@ -1,0 +1,20 @@
+{
+  "products": [
+  
+    {
+      "id": "10",
+      "name": "MY RETAILER",
+      "price": "10000"
+    },
+    {
+      "id": "4",
+      "name": "Rohit Sharma",
+      "price": "1.2cr"
+    },
+    {
+      "id": "9",
+      "name": "shital",
+      "price": "4600"
+    }
+  ]
+}
