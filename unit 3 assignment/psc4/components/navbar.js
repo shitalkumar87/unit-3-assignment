@@ -1,7 +1,7 @@
 let navbar=()=>{
     return `<div id="search images">
 
-    <input type="text" id="query">
+    <input type="text" id="query" >
       </div>
 
    <div id="category">

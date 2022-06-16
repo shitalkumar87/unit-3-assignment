@@ -2,7 +2,7 @@ let searchimage =async(value,api)=>{
 
     try{
         let res=await fetch(
-            `https://api.unsplash.com/search/photos/?query=${value}&per_page=20&client_id=${api}`
+            // `https://api.unsplash.com/search/photos/?query=${value}&per_page=20&client_id=${api}`
         );
 
         let data =await res.json();
