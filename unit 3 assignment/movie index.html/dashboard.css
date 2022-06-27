@@ -1,0 +1,24 @@
+#container{
+    
+        display: grid;
+        grid-template-columns: repeat(3,30%);
+        grid-gap: 5%;
+        margin-top: 80px;
+        margin-left: 100px;
+        /* border: 1px solid black; */
+    
+}
+
+#div1{
+     
+    line-height: 2px;
+    height: 250px;
+    width: 220px;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+#pic{
+    height: 160px;
+    width: 100%;
+}
