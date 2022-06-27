@@ -1,0 +1,44 @@
+#navbar{
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: space-between;
+    padding: 10px;
+    background-color: aqua;
+}
+
+.category{
+    display: flex;
+   
+    gap: 90px;
+     
+}
+
+#slideshow{
+     height: 200px;
+     width: 300px;
+     margin: auto;
+    border: 1px solid black;
+    margin-top: 100px;
+}
+#pic{
+    height: 100%;
+    width: 100%;
+}
+
+#movies{
+    display: grid;
+    grid-template-columns: repeat(3,30%);
+    grid-gap: 5%;
+    margin-top: 80px;
+    margin-left: 100px;
+    /* border: 1px solid black; */
+}
+#baxa{
+    height: 250px;
+    width: 220px;
+    /* border: 1px solid black; */
+}
+#mpic{
+    height: 160px;
+    width: 100%;
+}
